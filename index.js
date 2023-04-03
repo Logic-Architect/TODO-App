@@ -5,6 +5,10 @@ const port = 8000;
 // Initialising Express
 const app =express();
 
+// Setting up the View Engine :EJS 
+app.set('view engine','ejs');
+app.set('views','./views');
+
 // Using Middleware to handle Get Request and directing them to Routes 
 app.use('/',require('./routes/index'));
 
