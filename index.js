@@ -5,6 +5,7 @@ const port = 8000;
 
 // Connecting the database 
 const db = require('./config/mongoose');
+const Task = require('./models/todo_app_db');
 
 // Initialising Express
 const app =express();

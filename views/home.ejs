@@ -9,6 +9,64 @@
     </title>
 </head>
 <body>
-    <h1>THis is my Homepage</h1>
+    <header class = 'main-heading'>
+        <p class = 'main-heading'>TODO App</p>
+    </header>
+
+    <div class="task-details">
+        <form action ='/add' method="post">
+            <div class="desc form-col" >
+                <label for="descp" class="form-heading">Description</label>
+                <input id="descp"  type="text" required="True" placeholder="What do you need to do ?" name="description">
+            </div>
+            <div class="category form-col">
+                <label class="form-heading" for="catg">
+                    Category
+                </label>
+                <select name="category" id="catg">
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="School">School</option>
+                    <option value="Cleaning">Cleaning</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="d_date form-col">
+                <label for="dDate" class="form-heading">Due Date</label>
+                <input type="date" id="dDate" name="d_date">
+            </div>
+            <div class="button">
+                <div class="add-button">
+                    <button type="submit"><i class="fa-duotone fa-plus"></i><span>Add</span></button>
+                </div>
+                <div class="delete-button">
+                    <button><i class="fa-solid fa-trash-can"></i><span>Delete</span></button>
+                </div>
+            </div>    
+        </form>
+    </div>
+    <div class="added-task">
+        <ul class="task-list">
+            <% for(let i of task){%>
+                <li>
+                    <div class="display-task">
+                        <input class="select-task" type="checkbox" name="" value="">
+                        <p class="display-desc">
+                            <%= i.description%>
+                        </p>
+                        <p class="display-d_date">
+                            <%= i.d_date%>
+                        </p>
+                        <%if(i.category!=null){%>
+                            <p class="display-category">
+                                <%= i.category%>
+                            </p>
+                            <%}%>
+                    </div>
+                </li>
+                <%} %>
+        </ul>
+    </div>
+    <script src="https://kit.fontawesome.com/e784f7575e.js" crossorigin="anonymous"></script>
 </body>
 </html>
