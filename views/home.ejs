@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,17 +9,32 @@
         <%= title%>
     </title>
 </head>
+
+<!-- ADDING CSS STYLESHEET  -->
+<link rel="stylesheet" type="text/css" href="../asset/style.css">
+
 <body>
-    <header class = 'main-heading'>
-        <p class = 'main-heading'>TODO App</p>
+
+    <!-- Header line TODO APP  -->
+
+    <header class='main-heading'>
+        <p class='main-heading'>TODO App</p>
     </header>
 
+    <!-- TASK DETAILS : CREATING THE FORM TO ADD TASK -->
+
     <div class="task-details">
-        <form action ='/add' method="post">
-            <div class="desc form-col" >
+        <form action='/add' method="post">
+
+            <!-- DESCRIPTION COLUMN  -->
+
+            <div class="desc form-col">
                 <label for="descp" class="form-heading">Description</label>
-                <input id="descp"  type="text" required="True" placeholder="What do you need to do ?" name="description">
+                <input id="descp" type="text" required="True" placeholder="What do you need to do ?" name="description">
             </div>
+
+            <!-- CATEGORY COLUMN  -->
+
             <div class="category form-col">
                 <label class="form-heading" for="catg">
                     Category
@@ -31,26 +47,41 @@
                     <option value="Other">Other</option>
                 </select>
             </div>
+
+            <!-- DUE DATE COLUMN  -->
+
             <div class="d_date form-col">
                 <label for="dDate" class="form-heading">Due Date</label>
                 <input type="date" id="dDate" name="d_date">
             </div>
+
+            <!-- ADD BUTTON  -->
+
             <div class="button">
                 <div class="add-button">
                     <button type="submit"><i class="fa-duotone fa-plus"></i><span>Add</span></button>
                 </div>
-                <div class="delete-button">
-                    <button><i class="fa-solid fa-trash-can"></i><span>Delete</span></button>
-                </div>
-            </div>    
+            </div>
         </form>
+
+
+        <!-- DELETE BUTTON  -->
+
+        <div class="delete-button">
+                <button type="submit" form="selected-task-is"><i class="fa-solid fa-trash-can"></i><span>Delete</span></button>
+
+        </div>
     </div>
+
+    <!-- DISPLAYING THE ADDED TASK  -->
+
+    <form id="selected-task-is" action="/delete" method="post">
     <div class="added-task">
         <ul class="task-list">
             <% for(let i of task){%>
                 <li>
+                    <input type="checkbox" name="id" value="<%= i.id%>">
                     <div class="display-task">
-                        <input class="select-task" type="checkbox" name="" value="">
                         <p class="display-desc">
                             <%= i.description%>
                         </p>
@@ -61,12 +92,21 @@
                             <p class="display-category">
                                 <%= i.category%>
                             </p>
-                            <%}%>
+                        <%}%>
                     </div>
                 </li>
-                <%} %>
+            <%} %>
         </ul>
     </div>
+</form>
+
+    <!-- ADDING JAVASCRIPT ASSET  -->
+
+    <script type="text/javascript" src="../asset/index.js"></script>
+
+    <!-- ADDING FONTAWESOME AS SCRIPT  -->
+
     <script src="https://kit.fontawesome.com/e784f7575e.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
