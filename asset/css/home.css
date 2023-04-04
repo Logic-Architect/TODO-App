@@ -1,0 +1,228 @@
+body{
+    margin: 0px;
+    width: 80%;
+    margin: auto;
+    /* text-align: center; */
+    font-size: 20px;
+}
+
+/* FONTS  */
+@font-face {
+    font-family: 'Cascadia Code';
+    font-style: normal;
+    font-weight: 400;
+    src: url('Cascadia.ttf') format('truetype');
+    font-display: fallback;
+    }
+
+
+/* HEADING  */
+.main-heading{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 15vh;
+    border-bottom: 1px solid rgb(175, 169, 169);
+}
+.heading-content{
+    margin: 0px 0px 5px 0px;
+    align-self: self-end;
+    font-size: 2.8rem;
+}
+
+/* FORM TO ADD TASK DETAILS  */
+.task-details{
+    width: 100%;
+}
+
+#add-task-form{
+    display: grid;
+    height: 40vh;
+    grid-template-areas: 
+        'desc desc'
+        'category d_date' ;
+}
+
+/* PROPERTIES COMMON TO ALL ADD TASK FORM ELEMENTS  */
+.form-col{
+    padding: 10px ;
+}
+.task-details label{
+    color: grey;
+    font-size: 2.5rem;
+    display: block;
+}
+.task-details input{
+    border: 0px;
+}
+.task-details input:focus{
+    border: none;
+    outline: none;
+}
+.task-details input::placeholder{
+    padding: 4px;
+    font-size: 1.5rem; 
+}
+.task-details select{
+    border: 0px;
+}
+
+/* PARTICULAR PROPERTIES OF ADD TASK INPUT FORM ELEMENTS  */
+
+.desc{
+    grid-area: desc;
+    margin: 0px;
+    border-bottom: 1px solid grey;
+}
+.desc input{
+    width: 100%;
+    height: 40%;
+    font-size: 1.4rem;
+}
+.desc input:focus{
+    border: none;
+}
+.category{
+    grid-area: category;
+    height: 90%;
+    margin: 0px;
+    border-bottom: 1px solid grey;
+}
+.category select{
+    width: 95%;
+    color: grey;
+    font-size: 1.4rem;
+
+}
+.d_date{
+    grid-area: d_date;
+    height: 90%;
+    margin: 0px;
+    border-bottom: 1px solid grey;
+}
+.d_date input{
+    font-size: 1.4rem;
+    color: grey;
+    width: 85%;
+}
+
+
+/* BUTTONS  */
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 20vh;
+    border-bottom: 1px solid grey;
+}
+.add-button{
+    margin: 5px;
+    width: 20%;
+    height: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(92, 88, 88);
+    border: 2px solid rgb(92, 88, 88);
+    color: white; 
+}
+.add-button i{
+    font-size: 2rem;
+}
+.add-button span{
+    font-size: 1.4rem;
+}
+.add-button:hover{
+    background-color: rgb(46, 43, 43);
+    border: 2px solid rgb(46, 43, 43);
+}
+.delete-button{
+    margin: 5px;
+    width: 20%;
+    height: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(184, 41, 41);
+    border: 2px solid rgb(184, 41, 41);
+    color: white; 
+}
+.delete-button i{
+    font-size: 1.5rem;
+}
+.delete-button span{
+    font-size: 1.4rem;
+}
+.delete-button:hover{
+    background-color: rgb(95, 18, 18);
+    border: 2px solid rgb(112, 23, 23);
+}
+
+/* DISPLAYING THE ADDED TASK  */
+.added-task{
+    height: 15vh;
+    width: 95%;
+}
+
+.task-list{
+    list-style: none;
+}
+
+.task-list-items{
+    width: 100%;
+    border-bottom: 1px solid grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CHECKBOX PROPERTIES  */
+.checkbox-container{
+    height:100%;
+    width: 10%;
+    display: inline-block;
+    text-align: center;
+}
+
+#checkbox{
+    width: 20px;
+    height: 40px;
+}
+
+/* CONTAINER CONTAINING DESCRIPTION DUE DATE AND CATEGORY */
+.display-task{
+    flex-basis: 60%;
+    display: grid;
+    width: 88%;
+}
+.display-desc{
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    margin: 1rem 1rem 0.5rem 0.15rem;
+}
+.display-d_date{
+    margin: 0.15rem 1rem 1rem 0.15rem;
+}
+
+.category-container{
+    grid-area: category-container;
+    flex-basis: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.display-category{
+    height: 3.2rem;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+    color: white;
+}
+.category-type{
+    font-size: 1.4rem;
+}

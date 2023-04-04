@@ -8,23 +8,24 @@
     <title>
         <%= title%>
     </title>
-</head>
 
-<!-- ADDING CSS STYLESHEET  -->
-<link rel="stylesheet" type="text/css" href="../asset/style.css">
+    <!-- ADDING CSS STYLESHEET  -->
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+
+</head>
 
 <body>
 
     <!-- Header line TODO APP  -->
 
     <header class='main-heading'>
-        <p class='main-heading'>TODO App</p>
+        <p class='heading-content'>TODO App</p>
     </header>
 
     <!-- TASK DETAILS : CREATING THE FORM TO ADD TASK -->
 
     <div class="task-details">
-        <form action='/add' method="post">
+        <form action='/add' method="post" class="task-details" id="add-task-form">
 
             <!-- DESCRIPTION COLUMN  -->
 
@@ -40,6 +41,7 @@
                     Category
                 </label>
                 <select name="category" id="catg">
+                    <option value="">Select a category</option>
                     <option value="Personal">Personal</option>
                     <option value="Work">Work</option>
                     <option value="School">School</option>
@@ -55,20 +57,25 @@
                 <input type="date" id="dDate" name="d_date">
             </div>
 
-            <!-- ADD BUTTON  -->
-
-            <div class="button">
-                <div class="add-button">
-                    <button type="submit"><i class="fa-duotone fa-plus"></i><span>Add</span></button>
-                </div>
-            </div>
         </form>
 
 
-        <!-- DELETE BUTTON  -->
+        <div class="button">
 
-        <div class="delete-button">
-                <button type="submit" form="selected-task-is"><i class="fa-solid fa-trash-can"></i><span>Delete</span></button>
+            <!-- ADD BUTTON  -->
+
+            <button type="submit" class="add-button" form="add-task-form">
+                <i class="fa-duotone fa-plus"></i>
+                   <span>Add Task</span>
+            </button>
+
+
+            <!-- DELETE BUTTON  -->
+
+            <button type="submit" form="selected-task-is" class="delete-button">
+                <i class="fa-solid fa-trash-can"></i>
+                    <span>Delete Tasks</span>
+            </button>
 
         </div>
     </div>
@@ -76,33 +83,59 @@
     <!-- DISPLAYING THE ADDED TASK  -->
 
     <form id="selected-task-is" action="/delete" method="post">
-    <div class="added-task">
-        <ul class="task-list">
-            <% for(let i of task){%>
-                <li>
-                    <input type="checkbox" name="id" value="<%= i.id%>">
-                    <div class="display-task">
-                        <p class="display-desc">
-                            <%= i.description%>
-                        </p>
-                        <p class="display-d_date">
-                            <%= i.d_date%>
-                        </p>
-                        <%if(i.category!=null){%>
-                            <p class="display-category">
-                                <%= i.category%>
+        <div class="added-task">
+            <ul class="task-list">
+                <% for(let i of task){%>
+                    <li class="task-list-items">
+
+                        <!-- CHECKBOX  -->
+                        <div class="checkbox-container">
+                            <input id="checkbox" type="checkbox" name="id" value="<%= i.id%>">
+                        </div>
+
+                        <div class="display-task">
+
+                            <!-- DISCRIPTION DISPLAY  -->
+                            <p class="display-desc">
+                                <%= i.description%>
                             </p>
-                        <%}%>
-                    </div>
-                </li>
-            <%} %>
-        </ul>
-    </div>
-</form>
+
+                            <!-- DATE DISPLAY  -->
+                            <p class="display-d_date">
+                                <i class="fa-regular fa-calendar"></i>
+
+                                <!-- FORMATTING DATE INTO CORRECT FORMAT  -->
+
+                                <%{%>
+                                    <% let m=["January", "February" , "March" , "April" , "May" , "June" , "July"
+                                        , "August" , "September" , "October" , "November" , "December" ]; %>
+                                        <%= m[i.d_date.getMonth()]%>
+                                            <%= i.d_date.getDate()%>,
+                                                <%= i.d_date.getFullYear()%>
+                                                    <%}%>
+
+                            </p>
+                            </div>
+                            <!-- CATEGORY DISPLAY  -->
+
+                            <div class="category-container">
+                            <%if(i.category!=null){%>
+                                <p class="display-category">
+                                    <span class="category-type">
+                                        <%= i.category%>
+                                    </span>
+                                </p>
+                                <%}%>
+                        </div>
+                    </li>
+                    <%} %>
+            </ul>
+        </div>
+    </form>
 
     <!-- ADDING JAVASCRIPT ASSET  -->
 
-    <script type="text/javascript" src="../asset/index.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
 
     <!-- ADDING FONTAWESOME AS SCRIPT  -->
 

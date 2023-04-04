@@ -17,7 +17,7 @@ module.exports.home = function (req, res) {
 
 module.exports.add = function (req, res) {
     // console.log("Add work to list");
-    console.log(req.body);
+    // console.log(req.body);
 
     Task.create({
         description: req.body.description,
@@ -25,7 +25,8 @@ module.exports.add = function (req, res) {
         d_date: req.body.d_date
     })
         .then(data => {
-            console.log('********');
+            console.log('Successfully Added ********');
+            console.log(req.body);
             res.redirect('back');
         })
 
@@ -46,13 +47,14 @@ module.exports.delete = function (req, res) {
                     console.log("Errer deleting the contact")
                 }) 
         });
+        res.redirect('localhost:8000');
     }
     else{
         Task.findByIdAndDelete(id)
         .catch(err => {
             console.log("Errer deleting the contact")
         })
+        res.redirect('back');
     }
-
-    res.redirect('back');
+    
 }
