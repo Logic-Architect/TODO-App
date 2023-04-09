@@ -1,0 +1,44 @@
+.home-footer{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid grey;
+}
+
+.created-by{
+    font-style: oblique;
+    font-size: 0.7rem;
+    margin: 2px;
+}
+
+
+.address-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.creator-name{
+    font-family: cursive;
+    margin: 2px;
+    font-size: 1.5rem;
+}
+.contact-details{
+    list-style: none;
+    margin: 2px;
+    width: 50%;
+}
+.contact-item{
+    display: flex;
+    justify-content: flex-start;
+}
+.contact-item p{
+    text-align: left;
+    margin: 0px 10px ;
+    padding: 2px;
+}
+.contact-item a{
+    margin: 0px 12px ;
+}

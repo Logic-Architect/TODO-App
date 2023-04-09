@@ -1,0 +1,65 @@
+/* MAIN CONTENT PROPERTIES  */
+.sign-up-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+}
+
+/* PROPERTIES ON HEADING "SIGN IN " */
+.sign-up-heading{
+    font-size: 2.5rem;
+    color: rgb(165, 14, 14);
+}
+
+/* THE SIGN IN FORM  */
+.sign-up-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.sign-up-input input::placeholder{
+    color: grey;
+    font-style: italic;
+    font-size: 1.2rem;
+
+}
+.sign-up-input input::before{
+    content:":";
+}
+.sign-up-form input:focus{
+    outline: none;
+    border-bottom: 1px solid grey;
+}
+
+/* COMBINED LABEL AND INPUT PROPERTIES  */
+.sign-up-input{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* LABEL TAG  */
+.sign-up-input label{
+    margin: 5px 15px;
+}
+/* INPUT TAG  */
+.sign-up-input input{
+    margin: 5px 15px;
+    border: none;
+    width: 25rem;
+    font-size: 1.3rem;
+    font-weight: 200;
+    font-style: italic;
+}
+.sign-up-form input[type='submit']{
+    align-self: flex-end;
+    margin: 15px;
+    width: 5rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    padding: 5px;
+    background-color: grey;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}

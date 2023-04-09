@@ -1,0 +1,68 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.tag-line{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px dashed grey;
+}
+.line1{
+    font-size: 2.5rem;
+    color: rgb(78, 16, 16);
+}
+.line3{
+    font-size: 2rem;
+    color: rgb(78, 16, 16);
+}
+.line3 span{
+    text-transform: capitalize;
+}
+.line2{
+    font-size: 1.5rem;
+    color: rgb(105, 96, 96);
+}
+
+.user-auth{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-menu{
+    margin: 20px;
+}
+
+/* #mytask{
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: rgb(136, 74, 74);
+    padding: 5px;
+}
+#mytask:hover{
+    border-bottom: 1px solid grey;
+    color: rgb(48, 15, 15);
+} */
+
+.user-menu a{
+    text-decoration: none;
+    color: rgb(112, 75, 75);
+    font-size: 2.5rem;
+    padding: 5px;
+    transition: 1s;
+}
+
+.user-menu a:hover{
+    border-bottom: 2px solid rgb(92, 84, 84);
+    color: rgb(82, 42, 42);
+    font-size: 3rem;
+}

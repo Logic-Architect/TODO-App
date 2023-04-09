@@ -1,9 +1,44 @@
-<h1>
-    This is my homepage
-    <ul>
-        <li>
-            <a href="/sign-in">Sign In</a>
-            <a href="/sign-up">Sign Up</a>
-        </li>
-    </ul>
-</h1>
+<link rel="stylesheet" type="text/css" href="/css/home/home.css">
+<div class="main">
+    <div class="tag-line">
+
+        <p class="line1">
+            Welcome to the TODO List App
+        </p>
+        <%if (locals.user){%>
+            <p class="line3">
+                Welcome <span><%= locals.user.username%></span>
+            </p>
+        <%}%>
+        <p class="line2">
+            Set your task now
+        </p>
+
+    </div>
+    <%if (locals.user){%>
+        <div class="menus">
+            <ul class="user-auth">
+                <li class="user-menu">
+                    <a href="/user/profile">
+                        My Task
+                    </a>
+                </li>
+            </ul>
+        </div>
+    <%}else{%>
+        <div class="menus">
+            <ul class="user-auth">
+                <li class="user-menu">
+                    <a href="/sign-in">
+                        Sign In
+                    </a>
+                </li>
+                <li class="user-menu">
+                    <a href="/sign-up">
+                        Sign Up
+                    </a>
+                </li>
+            </ul>
+        </div>
+    <%}%>
+</div>

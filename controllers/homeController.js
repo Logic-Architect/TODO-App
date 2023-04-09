@@ -35,7 +35,12 @@ module.exports.signup = function(req,res){
 module.exports.addUser = function(req,res){
     if(req.body.password!=req.body.confirm_password){
         console.log('password not same as confirm password');
-        return res.redirect('back');
+        // return res.redirect('back');
+        res.render('error',{
+            title:'Error',
+            layout:'layout',
+            error:'Passwords Do Not Match'
+        })
     }
 
     User.findOne({email:req.body.email})
@@ -53,7 +58,11 @@ module.exports.addUser = function(req,res){
         }
         else{
             console.log('User Already Exist');
-            res.send("User already Exist");
+            res.render('error',{
+                title:'Error',
+                layout: 'layout',
+                error : 'User Already Exist'
+            });
         }
     })
     .catch(err=>{

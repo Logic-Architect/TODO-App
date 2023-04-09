@@ -1,7 +1,28 @@
-<form action="/add-user" method="post">
-    <input type="text" name="username" required placeholder="Enter User Name" id="">
-    <input type="email" name="email" required placeholder="Enter your Email" id="">
-    <input type="password" name="password" required placeholder="Enter a suitable password" id="">
-    <input type="password" name="confirm_password" required placeholder="Confirm your password" id="">
-    <input type="submit" value="Sign Up">
-</form>    
+<link rel="stylesheet" href="/css/home/sign-up.css">
+<div class="sign-up-page">
+    <p class="sign-up-heading">
+        Sign Up
+    </p>
+    <form action="/add-user" method="post" class="sign-up-form">
+        
+        <div class="sign-up-input">
+            <label for="username">User Name </label>
+            <input type="text" name="username" required placeholder="Enter User Name" id="username">
+        </div>
+        <div class="sign-up-input">
+            <label for="email">Email </label>
+            <input type="email" name="email" required placeholder="Enter your Email" id="email">
+        </div>
+        <div class="sign-up-input">
+            <label for="password">Password</label>
+            <input type="password" name="password" required placeholder="Enter a suitable password" id="password">
+        </div>
+        <div class="sign-up-input">
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" name="confirm_password" required placeholder="Confirm your password" id="">
+        </div>
+        
+        
+        <input type="submit" value="Sign Up">
+    </form>
+</div>
