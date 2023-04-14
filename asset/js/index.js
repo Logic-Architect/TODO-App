@@ -1,11 +1,11 @@
 console.log("My asset script is running");
 
 const colorMapper={
-    Personal:'violet' ,
+    Personal:'Magenta',
     Work:'Orange',
-    School:'Purple',
+    School:'Grey',
     Cleaning:'Green',
-    Other:'darkyellow'
+    Other:'Maroon'
 }
 
 // console.log(typeof(colorMapper));

@@ -6,18 +6,22 @@ const LocalStrategy =require('passport-local').Strategy;
 
 // AUTHENTICATE USING PASSPORT 
 passport.use(new LocalStrategy({
-    usernameField : 'email'
+    usernameField : 'email',
+    passReqToCallback:true
     },
-    function(email,password,done){
+    function(req,email,password,done){
         User.findOne({email: email})
         .then(user=>{
             if(!user || user.password!=password){
+                req.flash('error','Invalid UserName/Password');
                 console.log('Invalid Username/Password');
                 return done(null,false);
             }
+            req.flash('success','Logged In Successfully');
             done(null,user);
         })
         .catch(err=>{
+            req.flash('error','Error finding User');
             console.log('Error in finding User');
             return done(err);
         })

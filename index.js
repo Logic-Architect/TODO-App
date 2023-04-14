@@ -4,6 +4,9 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const port = 8000;
 
+const flash = require('connect-flash');
+const customMware =require('./config/middleware')
+
 // Connecting the database 
 const db = require('./config/mongoose');
 const Task = require('./models/todo_app_db');
@@ -70,6 +73,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(passport.setAuthenticatedUser)
+
+app.use(flash());
+app.use(customMware.setFlash)
+
 
 // Using Middleware to handle Get Request and directing them to Routes 
 app.use('/',require('./routes/index'));
