@@ -4,7 +4,7 @@
         Sign In
     </p>
     <form action="/user/create-session" method="post" class="sign-in-form">
-        
+
         <div class="sign-in-input">
             <label for="email">Email </label>
             <input type="email" name="email" required placeholder="Enter your Email" id="email">
@@ -15,4 +15,12 @@
         </div>
         <input type="submit" value="Sign In">
     </form>
+    <div class="google-sign-in">
+        <a href="/user/auth/google" id="google-auth">
+            <i class="fa-brands fa-google"></i>
+            <p>
+                Sign In With Google
+            </p>
+        </a>
+    </div>
 </div>

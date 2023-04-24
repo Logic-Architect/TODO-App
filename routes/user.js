@@ -22,6 +22,13 @@ router.post('/delete',userController.delete);
 
 router.get('/sign-out',userController.signout);
 
+router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+router.get('/auth/google/callback',
+    passport.authenticate('google', {
+        failureRedirect: '/user/sign-in'
+    }),
+    userController.createSession)
+
 
 
 module.exports =router;

@@ -4,6 +4,8 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const port = 8000;
 
+const googleStrategy = require('./config/passport-google-oauth2-strategy');
+
 const flash = require('connect-flash');
 const customMware =require('./config/middleware')
 

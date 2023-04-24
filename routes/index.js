@@ -17,7 +17,7 @@ router.get('/sign-up',homeController.signup);
 router.post('/add-user',homeController.addUser);
 
 
-router.use('/user',require('./user.js'))
+router.use('/user',require('./user.js'));
 
 
 module.exports = router;
